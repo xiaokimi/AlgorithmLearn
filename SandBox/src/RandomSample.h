@@ -38,3 +38,32 @@ void GenRandomByDistribution()
         std::cout << dis(mt) << std::endl;
     }
 }
+
+class RandomNum
+{
+public:
+    static RandomNum& GetInstance()
+    {
+        static RandomNum instance;
+        return instance;
+    }
+
+    unsigned int GenRandomNum()
+    {
+        return mt();
+    }
+
+protected:
+    RandomNum()
+    {
+        std::random_device rd;
+        mt = std::mt19937(rd());
+    }
+
+    ~RandomNum() = default;
+    RandomNum(const RandomNum&) = delete;
+    RandomNum& operator=(const RandomNum&) = delete;
+
+private:
+    std::mt19937 mt;
+};
