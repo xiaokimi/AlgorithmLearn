@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <algorithm>
 
 int FindNumberIndex(std::vector<int>& nums, int target)
 {
@@ -105,4 +106,20 @@ int FindPeakElement(std::vector<int>& nums)
     }
 
     return index;
+}
+
+// 使用库函数进行二分搜索
+void BinarySearchFunction()
+{
+    std::vector<int> nums = { 1, 3, 5, 7, 8, 8, 9, 11 };
+
+    {
+        // index = 4 (查找 >= 8 的第一个元素下标)
+        int index = std::lower_bound(nums.begin(), nums.end(), 8) - nums.begin();
+    }
+
+    {
+        // index = 6 (查找 > 8 的第一个元素下标)
+        int index = std::upper_bound(nums.begin(), nums.end(), 8) - nums.begin();
+    }
 }

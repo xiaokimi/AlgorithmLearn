@@ -1,5 +1,6 @@
 #pragma once
 
+// 最大公约数
 int GCD(int x, int y)
 {
     int temp;
@@ -10,4 +11,77 @@ int GCD(int x, int y)
         x = temp;
     }
     return x;
+}
+
+// 最小公倍数
+int LCM(int x, int y)
+{
+    int c = GCD(x, y);
+    return x * y / c;
+}
+
+// 同余元原理
+void ModTemplate()
+{
+    {
+        // 加法同余
+        int a = 100, b = 999;
+        int mod = 17;
+
+        int c = (a + b) % mod;
+        int d = (a % mod + b % mod) % mod;
+    }
+
+    {
+        // 减法同余
+        int a = 100, b = 999;
+        int mod = 17;
+
+        int c = (a - b) % mod;
+        int d = (a % mod - b % mod + mod) % mod;
+    }
+
+    {
+        // 乘法同余
+        int a = 100, b = 999;
+        int mod = 17;
+
+        int c = (a * b) % mod;
+        int d = ((a % mod) * (b % mod)) % mod;
+    }
+}
+
+bool IsPrime(int num)
+{
+    if (num == 1)
+    {
+        return false;
+    }
+    else if (num == 2 || num == 3 || num == 5 || num == 7)
+    {
+        return true;
+    }
+    else if (num % 2 == 0 || num % 3 == 0 || num % 5 == 0 || num % 7 == 0)
+    {
+        return false;
+    }
+
+    for (int i = 3; i * i <= num; i++)
+    {
+        if (num % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+// [1...N] 中同时满足 k % x != 0 && k % y != 0 的个数
+int CalTotalCount(int N, int x, int y)
+{
+    int a = N / x;
+    int b = N / y;
+    int c = N / LCM(x, y);
+
+    return N - (a + b - c);
 }
