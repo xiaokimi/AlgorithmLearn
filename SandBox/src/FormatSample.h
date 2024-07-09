@@ -32,3 +32,64 @@ void SplitWord()
         words.emplace_back(word);
     }
 }
+
+void GetLineNumSplitBySpace()
+{
+    std::string str;
+    std::getline(std::cin, str);
+
+    std::stringstream ss(str);
+
+    std::vector<int> nums;
+    int num;
+    while (ss >> num)
+    {
+        nums.push_back(num);
+    }
+
+    // output split nums
+    for (int i = 0; i < nums.size(); i++)
+    {
+        std::cout << nums[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+void StringStreamUseSample()
+{
+    std::string str;
+    std::getline(std::cin, str);
+
+    std::stringstream ss(str);
+
+    std::vector<int> nums;
+    int num;
+    while (ss >> num)
+    {
+        nums.push_back(num);
+    }
+
+    for (int i = 0; i < nums.size(); i++)
+    {
+        std::cout << nums[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // 重置状态，再次赋值
+    ss.clear();
+    nums.clear();
+
+    std::getline(std::cin, str);
+    ss.str(str);
+
+    while (ss >> num)
+    {
+        nums.push_back(num);
+    }
+
+    for (int i = 0; i < nums.size(); i++)
+    {
+        std::cout << nums[i] << " ";
+    }
+    std::cout << std::endl;
+}
