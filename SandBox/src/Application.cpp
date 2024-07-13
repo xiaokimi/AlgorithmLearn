@@ -6,18 +6,12 @@
 #include <unordered_map>
 #include <queue>
 
-#include "MaxEatBanana.h"
+#include "SevenCombine.h"
 
 using namespace std;
 
-int minimumDistance(vector<vector<int>>& points) {
-
-    return 1;
-}
-
 int main()
 {
-
-
+    SevenCombine();
     cin.get();
 }
