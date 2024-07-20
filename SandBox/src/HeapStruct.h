@@ -55,6 +55,7 @@ public:
             int index = 0;
             while (index < n)
             {
+                // 判断左右孩子中较大的位置
                 int maxIndex = index;
                 for (int i = index * 2 + 1; i < n && i <= index * 2 + 2; i++)
                 {
@@ -63,6 +64,8 @@ public:
                         maxIndex = i;
                     }
                 }
+
+                // 没找到，说明当前节点就是最大的了
                 if (maxIndex == index)
                 {
                     break;
