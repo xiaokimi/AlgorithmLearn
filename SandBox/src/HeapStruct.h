@@ -1,12 +1,12 @@
 #pragma once
 /*
-����:ÿ�����ڵ��ֵ�����ڵ����ӽڵ�
-�������:�Ȳ����β��Ȼ��ݹ����ϵ���
-ɾ������:����β�ŵ���ͷ��Ȼ��ݹ����µ���
+最大堆:每个根节点的值都大于等于子节点
+插入操作:先插入队尾，然后递归向上调整
+删除操作:将队尾放到队头，然后递归向下调整
 
-�� vector ��Ϊ�м�����Ϊ�������ӽڵ��±��ϵ:
-���ڵ��±�Ϊ i ���ӽڵ�Ϊ: [i * 2 + 1] [i * 2 + 2]
-�ֽڵ��±�Ϊ i �ĸ��ڵ�Ϊ: (i - 1) / 2
+以 vector 作为中间容器为例，父子节点下标关系:
+父节点下标为 i 的子节点为: [i * 2 + 1] [i * 2 + 2]
+字节点下标为 i 的父节点为: (i - 1) / 2
 
 */
 
@@ -49,13 +49,13 @@ public:
             mNums[0] = mNums[n - 1];
             mNums.pop_back();
 
-            // ���µ���
+            // 向下调整
             n--;
 
             int index = 0;
             while (index < n)
             {
-                // �ж����Һ����нϴ��λ��
+                // 判断左右孩子中较大的位置
                 int maxIndex = index;
                 for (int i = index * 2 + 1; i < n && i <= index * 2 + 2; i++)
                 {
@@ -65,7 +65,7 @@ public:
                     }
                 }
 
-                // û�ҵ���˵����ǰ�ڵ����������
+                // 没找到，说明当前节点就是最大的了
                 if (maxIndex == index)
                 {
                     break;
@@ -100,15 +100,15 @@ private:
 void STD_priority_queue()
 {
     {
-        // Ĭ���Ǵ󶥶�
+        // 默认是大顶堆
         std::priority_queue<int> ss;
 
-        // �ȼ���
+        // 等价于
         std::priority_queue<int, std::vector<int>, std::less<int>> ss2;
     }
 
     {
-        // С����
+        // 小顶堆
         std::priority_queue<int, std::vector<int>, std::greater<int>> ss;
     }
 }

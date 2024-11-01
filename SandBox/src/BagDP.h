@@ -4,9 +4,9 @@
 #include <algorithm>
 
 /*
-  weight[i] ÎïÆ· i µÄÖØÁ¿
-  value[i]  ÎïÆ· i µÄ¼ÛÖµ
-  dp[i][j]  ´ÓÏÂ±ê [0-i] µÄÎïÆ·ÖĞÈÎÒâÈ¡£¬·Å½øÈİÁ¿Îª j µÄ±³°üµÄ×î´óÖµ
+  weight[i] ç‰©å“ i çš„é‡é‡
+  value[i]  ç‰©å“ i çš„ä»·å€¼
+  dp[i][j]  ä»ä¸‹æ ‡ [0-i] çš„ç‰©å“ä¸­ä»»æ„å–ï¼Œæ”¾è¿›å®¹é‡ä¸º j çš„èƒŒåŒ…çš„æœ€å¤§å€¼
   dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i])
 */
 
@@ -39,9 +39,9 @@ int BagSelectWithTwoDim(std::vector<int>& weight, std::vector<int>& value, int b
 }
 
 /*
-  weight[i] ÎïÆ· i µÄÖØÁ¿
-  value[i]  ÎïÆ· i µÄ¼ÛÖµ
-  dp[j]     ÈİÁ¿Îª j µÄ±³°üµÄ×î´óÖµ
+  weight[i] ç‰©å“ i çš„é‡é‡
+  value[i]  ç‰©å“ i çš„ä»·å€¼
+  dp[j]     å®¹é‡ä¸º j çš„èƒŒåŒ…çš„æœ€å¤§å€¼
   dp[j] = max([j], dp[j - weight[i]] + value[i])
 */
 

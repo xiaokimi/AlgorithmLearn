@@ -49,9 +49,9 @@ void PermutationSample()
     dfs(nums, visit, path, 0);
 
     /*
-      ¿âº¯Êıµ÷ÓÃ
-      next_permutation ÏÂÒ»¸ö½µĞòÅÅÁĞ
-      prev_permutation ÏÂÒ»¸öÉıĞòÅÅÁĞ
+      åº“å‡½æ•°è°ƒç”¨
+      next_permutation ä¸‹ä¸€ä¸ªé™åºæ’åˆ—
+      prev_permutation ä¸‹ä¸€ä¸ªå‡åºæ’åˆ—
     */
     do
     {

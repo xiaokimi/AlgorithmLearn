@@ -1,35 +1,35 @@
 #pragma once
 
 /*
-ÌâÄ¿ÃèÊö:
-¸ø¶¨Á½¸öÖ»°üº¬Êý×ÖµÄÊý×éa,b,µ÷ÕûÊý×éaÀïÃæÊý×ÖµÄË³Ðò£¬Ê¹µÃ¾¡¿ÉÄÜ¶àµÄa[i] > b[i]¡£
-Êý×éaºÍbÖÐµÄÊý×Ö¸÷²»ÏàÍ¬¡£Êä³öËùÓÐ¿ÉÒÔ´ïµ½×îÓÅ½á¹ûµÄaÊý×éÊýÁ¿¡£
+é¢˜ç›®æè¿°:
+ç»™å®šä¸¤ä¸ªåªåŒ…å«æ•°å­—çš„æ•°ç»„a,b,è°ƒæ•´æ•°ç»„aé‡Œé¢æ•°å­—çš„é¡ºåºï¼Œä½¿å¾—å°½å¯èƒ½å¤šçš„a[i] > b[i]ã€‚
+æ•°ç»„aå’Œbä¸­çš„æ•°å­—å„ä¸ç›¸åŒã€‚è¾“å‡ºæ‰€æœ‰å¯ä»¥è¾¾åˆ°æœ€ä¼˜ç»“æžœçš„aæ•°ç»„æ•°é‡ã€‚
 
-ÊäÈëÃèÊö:
-ÊäÈëµÄµÚÒ»ÐÐÊÇÊý×éaÖÐµÄÊý×Ö£¬ÆäÖÐÖ»°üº¬Êý×Ö£¬Ã¿Á½¸öÊý×ÖÖ®¼äÏà¸ôÒ»¸ö¿Õ¸ñ£¬aÊý×é´óÐ¡²»³¬¹ý10
-ÊäÈëµÄµÚÒ»ÐÐÊÇÊý×ébÖÐµÄÊý×Ö£¬ÆäÖÐÖ»°üº¬Êý×Ö£¬Ã¿Á½¸öÊý×ÖÖ®¼äÏà¸ôÒ»¸ö¿Õ¸ñ£¬bÊý×é´óÐ¡²»³¬¹ý10
+è¾“å…¥æè¿°:
+è¾“å…¥çš„ç¬¬ä¸€è¡Œæ˜¯æ•°ç»„aä¸­çš„æ•°å­—ï¼Œå…¶ä¸­åªåŒ…å«æ•°å­—ï¼Œæ¯ä¸¤ä¸ªæ•°å­—ä¹‹é—´ç›¸éš”ä¸€ä¸ªç©ºæ ¼ï¼Œaæ•°ç»„å¤§å°ä¸è¶…è¿‡10
+è¾“å…¥çš„ç¬¬ä¸€è¡Œæ˜¯æ•°ç»„bä¸­çš„æ•°å­—ï¼Œå…¶ä¸­åªåŒ…å«æ•°å­—ï¼Œæ¯ä¸¤ä¸ªæ•°å­—ä¹‹é—´ç›¸éš”ä¸€ä¸ªç©ºæ ¼ï¼Œbæ•°ç»„å¤§å°ä¸è¶…è¿‡10
 
-Êä³öÃèÊö
-Êä³öËùÓÐ¿ÉÒÔ´ïµ½×îÓÅ½á¹ûµÄaÊý×éÊýÁ¿
+è¾“å‡ºæè¿°
+è¾“å‡ºæ‰€æœ‰å¯ä»¥è¾¾åˆ°æœ€ä¼˜ç»“æžœçš„aæ•°ç»„æ•°é‡
 
-Ê¾Àý1
-ÊäÈë£º
+ç¤ºä¾‹1
+è¾“å…¥ï¼š
 11 8 20
 10 13 7
 
-Êä³ö£º1
+è¾“å‡ºï¼š1
 
-ËµÃ÷£º
-×îÓÅ½á¹ûÖ»ÓÐÒ»¸ö£¬a=[11,20,8] £¬¹ÊÊä³ö 1 ¡£
-Ê¾Àý2
-ÊäÈë£º
+è¯´æ˜Žï¼š
+æœ€ä¼˜ç»“æžœåªæœ‰ä¸€ä¸ªï¼Œa=[11,20,8] ï¼Œæ•…è¾“å‡º 1 ã€‚
+ç¤ºä¾‹2
+è¾“å…¥ï¼š
 11 12 20
 10 13 7
 
-Êä³ö£º2
+è¾“å‡ºï¼š2
 
-ËµÃ÷£º
-ÓÐÁ½¸ö a Êý×éµÄÅÅÁÐ¿ÉÒÔ´ïµ½×îÓÅ½á¹û£¬ [12,20,11] ºÍ [11,20,12] £¬¹ÊÊä³ö 2
+è¯´æ˜Žï¼š
+æœ‰ä¸¤ä¸ª a æ•°ç»„çš„æŽ’åˆ—å¯ä»¥è¾¾åˆ°æœ€ä¼˜ç»“æžœï¼Œ [12,20,11] å’Œ [11,20,12] ï¼Œæ•…è¾“å‡º 2
 
 */
 
@@ -43,7 +43,7 @@ using namespace std;
 namespace HORSE_SORT
 {
 
-// ×îÓÅµÄÊýÁ¿
+// æœ€ä¼˜çš„æ•°é‡
 int maxWinCount = 0;
 int arraySortNum = 0;
 
@@ -71,7 +71,7 @@ void dfs(vector<int>& A, vector<int>& B, vector<bool>& visit, int index, int cou
         return;
     }
 
-    // ¼ôÖ¦ÓÅ»¯(Ê£Óà¿ÉÒÔÊ¤ÀûµÄÊýÁ¿ + ÒÑ¾­Ê¤ÀûÊÇÊýÁ¿) < µ±Ç°ÒÑÕÒµ½µÄ×î´óÊýÁ¿
+    // å‰ªæžä¼˜åŒ–(å‰©ä½™å¯ä»¥èƒœåˆ©çš„æ•°é‡ + å·²ç»èƒœåˆ©æ˜¯æ•°é‡) < å½“å‰å·²æ‰¾åˆ°çš„æœ€å¤§æ•°é‡
     if ((n - index ) + count < maxWinCount)
     {
         return;
@@ -81,7 +81,7 @@ void dfs(vector<int>& A, vector<int>& B, vector<bool>& visit, int index, int cou
     {
         if (!visit[i])
         {
-            // È¥ÖØÂß¼­£¬µ±Ç°Êý×ÖºÍÇ°Ò»¸öÒ»Ñù£¬ÇÒÇ°Ò»¸öÊý×ÖÃ»ÓÐ±»Ñ¡Ôñ£¬ËµÃ÷µ±Ç°Õâ¸ö²Ù×÷ÒÑ¾­ÓÐÁË
+            // åŽ»é‡é€»è¾‘ï¼Œå½“å‰æ•°å­—å’Œå‰ä¸€ä¸ªä¸€æ ·ï¼Œä¸”å‰ä¸€ä¸ªæ•°å­—æ²¡æœ‰è¢«é€‰æ‹©ï¼Œè¯´æ˜Žå½“å‰è¿™ä¸ªæ“ä½œå·²ç»æœ‰äº†
             if (i > 0 && A[i] == A[i - 1] && !visit[i - 1])
             {
                 continue;
@@ -111,7 +111,7 @@ void maxHorseSort()
         A.push_back(num);
     }
 
-    // ÇåÀí×´Ì¬
+    // æ¸…ç†çŠ¶æ€
     ss.clear();
     getline(cin, str);
     ss.str(str);

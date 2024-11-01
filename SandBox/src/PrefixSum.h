@@ -4,8 +4,8 @@
 #include <algorithm>
 
 /*
-  Ê¹ÓÃÇ°×ººÍ´¦Àíºó¿ìËÙ²éÑ¯Çø¼äºÍ
-  preSum[i] ´ú±íÔ­Çø¼ä [0, i - 1] µÄºÍ
+  ä½¿ç”¨å‰ç¼€å’Œå¤„ç†åå¿«é€ŸæŸ¥è¯¢åŒºé—´å’Œ
+  preSum[i] ä»£è¡¨åŸåŒºé—´ [0, i - 1] çš„å’Œ
 */
 void QueryRangeSum()
 {
@@ -18,13 +18,13 @@ void QueryRangeSum()
         preSum[i + 1] = preSum[i] + nums[i];
     }
 
-    // ²éÑ¯Çø¼ä [left, right] µÄÖµ
+    // æŸ¥è¯¢åŒºé—´ [left, right] çš„å€¼
     int left = 0, right = 3;
     int result = preSum[right + 1] - preSum[left];
 }
 
 /*
-  ³¤¶ÈÎª n µÄÓĞĞòÊı×é nums ÖĞ£¬Ñ¡ÔñÈÎÒâÒ»¸öÏÂ±ê i ºÍÆäËûµÄ k ¸öÏÂ±ê(°üº¬ÏÂ±êi)µÄ×îĞ¡¾àÀëºÍ
+  é•¿åº¦ä¸º n çš„æœ‰åºæ•°ç»„ nums ä¸­ï¼Œé€‰æ‹©ä»»æ„ä¸€ä¸ªä¸‹æ ‡ i å’Œå…¶ä»–çš„ k ä¸ªä¸‹æ ‡(åŒ…å«ä¸‹æ ‡i)çš„æœ€å°è·ç¦»å’Œ
 */
 void GetMinSum(std::vector<int>& nums, int k)
 {

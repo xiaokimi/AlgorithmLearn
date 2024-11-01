@@ -8,15 +8,15 @@
 
 void FormatNumber()
 {
-    // Ä¬ÈÏÊä³öµÄÊÇ6¸öÊý×ÖµÄ¿ÆÑ§¼ÆÊý·¨ 3.14159
+    // é»˜è®¤è¾“å‡ºçš„æ˜¯6ä¸ªæ•°å­—çš„ç§‘å­¦è®¡æ•°æ³• 3.14159
     double value = 3.141592654;
     std::cout << value << std::endl;
 
-    // ±£Áô4Î»Ð¡Êý 3.1416
+    // ä¿ç•™4ä½å°æ•° 3.1416
     std::cout << std::setprecision(4) << std::setiosflags(std::ios::fixed);
     std::cout << value << std::endl;
 
-    // »Ö¸´ÎªÄ¬ÈÏÊä³ö 3.14159
+    // æ¢å¤ä¸ºé»˜è®¤è¾“å‡º 3.14159
     std::cout << std::setprecision(0) << std::resetiosflags(std::ios::fixed);
     std::cout << value << std::endl;
 }
@@ -75,7 +75,7 @@ void StringStreamUseSample()
     }
     std::cout << std::endl;
 
-    // ÖØÖÃ×´Ì¬£¬ÔÙ´Î¸³Öµ
+    // é‡ç½®çŠ¶æ€ï¼Œå†æ¬¡èµ‹å€¼
     ss.clear();
     nums.clear();
 

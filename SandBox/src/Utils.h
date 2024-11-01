@@ -1,6 +1,9 @@
 #pragma once
 
-// ×î´ó¹«Ô¼Êı
+#include <vector>
+#include <algorithm>
+
+// æœ€å¤§å…¬çº¦æ•°
 int GCD(int x, int y)
 {
     int temp;
@@ -13,18 +16,18 @@ int GCD(int x, int y)
     return x;
 }
 
-// ×îĞ¡¹«±¶Êı
+// æœ€å°å…¬å€æ•°
 int LCM(int x, int y)
 {
     int c = GCD(x, y);
     return x * y / c;
 }
 
-// Í¬ÓàÔªÔ­Àí
+// åŒä½™å…ƒåŸç†
 void ModTemplate()
 {
     {
-        // ¼Ó·¨Í¬Óà
+        // åŠ æ³•åŒä½™
         int a = 100, b = 999;
         int mod = 17;
 
@@ -33,7 +36,7 @@ void ModTemplate()
     }
 
     {
-        // ¼õ·¨Í¬Óà
+        // å‡æ³•åŒä½™
         int a = 100, b = 999;
         int mod = 17;
 
@@ -42,7 +45,7 @@ void ModTemplate()
     }
 
     {
-        // ³Ë·¨Í¬Óà
+        // ä¹˜æ³•åŒä½™
         int a = 100, b = 999;
         int mod = 17;
 
@@ -76,7 +79,7 @@ bool IsPrime(int num)
     return true;
 }
 
-// [1...N] ÖĞÍ¬Ê±Âú×ã k % x != 0 && k % y != 0 µÄ¸öÊı
+// [1...N] ä¸­åŒæ—¶æ»¡è¶³ k % x != 0 && k % y != 0 çš„ä¸ªæ•°
 int CalTotalCount(int N, int x, int y)
 {
     int a = N / x;
@@ -84,4 +87,40 @@ int CalTotalCount(int N, int x, int y)
     int c = N / LCM(x, y);
 
     return N - (a + b - c);
+}
+
+// åŒºé—´åˆå¹¶
+void mergeArray(std::vector<std::vector<int>>& ranges)
+{
+    std::sort(ranges.begin(), ranges.end());
+
+    std::vector<std::vector<int>> res;
+    for (int i = 0; i < ranges.size(); i++)
+    {
+        if (!res.empty() && res.back()[1] >= ranges[i][0])
+        {
+            res.back()[1] = std::max(res.back()[1], ranges[i][1]);
+        }
+        else
+        {
+            res.push_back(ranges[i]);
+        }
+    }
+}
+
+// å¿«é€Ÿå¹‚è®¡ç®— (x^n) % mod
+long long fastPowerMod(long long x, long long n, long long MOD)
+{
+    long long result = 1;
+    long long base = x % MOD;
+    while (n > 0)
+    {
+        if (n % 2 == 1)
+        {
+            result = (result * base) % MOD;
+        }
+        base = (base * base) % MOD;
+        n /= 2;
+    }
+    return result;
 }

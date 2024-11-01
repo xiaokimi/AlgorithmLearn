@@ -8,15 +8,15 @@ void SortFunctionTemplate()
     std::vector<int> nums = { 1, 3, 5, 7, 9, 2, 4, 6, 8, 10 };
 
     {
-        // 默认由小到大排序
+        // 榛樿鐢卞皬鍒板ぇ鎺掑簭
         std::sort(nums.begin(), nums.end());
 
-        // 等价方法
+        // 绛変环鏂规硶
         std::sort(nums.begin(), nums.end(), std::less<int>());
     }
 
     {
-        // 由大到小排序
+        // 鐢卞ぇ鍒板皬鎺掑簭
         std::sort(nums.begin(), nums.end(), std::greater<int>());
     }
 }

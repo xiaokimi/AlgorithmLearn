@@ -1,12 +1,12 @@
 #pragma once
 
 /*
-Ê¹ÓÃ×îĞ¡¶ÑÀ´´¦ÀíËÑË÷½Úµã£¬´Ó×îĞ¡¶Ñµ¯³öÊ±£¬Æä×îĞ¡¾àÀë¾ÍÈ·¶¨ÁË
-distance[i] Ô´µãµ½ i µãµÄ×î¶Ì¾àÀë
-visit[i] ÊÇ·ñ´Ó×îĞ¡¶Ñµ¯³ö¹ı
+ä½¿ç”¨æœ€å°å †æ¥å¤„ç†æœç´¢èŠ‚ç‚¹ï¼Œä»æœ€å°å †å¼¹å‡ºæ—¶ï¼Œå…¶æœ€å°è·ç¦»å°±ç¡®å®šäº†
+distance[i] æºç‚¹åˆ° i ç‚¹çš„æœ€çŸ­è·ç¦»
+visit[i] æ˜¯å¦ä»æœ€å°å †å¼¹å‡ºè¿‡
 
-·ÃÎÊ u µÄÒ»Ìõ±ß v:
-distance[u] + w < distance[v] °Ñ (distance[u] + w, v) ¼ÓÈë×îĞ¡¶Ñ
+è®¿é—® u çš„ä¸€æ¡è¾¹ v:
+distance[u] + w < distance[v] æŠŠ (distance[u] + w, v) åŠ å…¥æœ€å°å †
 */
 
 #include <vector>
@@ -14,8 +14,8 @@ distance[u] + w < distance[v] °Ñ (distance[u] + w, v) ¼ÓÈë×îĞ¡¶Ñ
 #include <iostream>
 
 /*
-@n    : ¶¥µã¸öÊı
-@edges: ±ßµÄ¹ØÏµ vector<int> edge [a, b, w]
+@n    : é¡¶ç‚¹ä¸ªæ•°
+@edges: è¾¹çš„å…³ç³» vector<int> edge [a, b, w]
 */
 void DijkstraSolver(int n, std::vector<std::vector<int>>& edges)
 {
@@ -25,7 +25,7 @@ void DijkstraSolver(int n, std::vector<std::vector<int>>& edges)
         int a = edges[i][0], b = edges[i][1], w = edges[i][2];
         relation[a].push_back({ b, w });
 
-        // ÎŞÏòÍ¼´úÂëÂß¼­ 
+        // æ— å‘å›¾ä»£ç é€»è¾‘ 
         //relation[b].push_back({ a, w });
     }
 

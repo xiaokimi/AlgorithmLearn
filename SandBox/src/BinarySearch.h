@@ -26,7 +26,7 @@ int FindNumberIndex(std::vector<int>& nums, int target)
     return -1;
 }
 
-// >= target µÄ×î×óÎ»ÖÃ
+// >= target çš„æœ€å·¦ä½ç½®
 int FindMostLeftIndex(std::vector<int>& nums, int target)
 {
     int left = 0, right = nums.size();
@@ -47,7 +47,7 @@ int FindMostLeftIndex(std::vector<int>& nums, int target)
     return index;
 }
 
-// <= target µÄ×îÓÒÎ»ÖÃ
+// <= target çš„æœ€å³ä½ç½®
 int FindMostRightIndex(std::vector<int>& nums, int target)
 {
     int left = 0, right = nums.size();
@@ -108,18 +108,18 @@ int FindPeakElement(std::vector<int>& nums)
     return index;
 }
 
-// Ê¹ÓÃ¿âº¯Êı½øĞĞ¶ş·ÖËÑË÷
+// ä½¿ç”¨åº“å‡½æ•°è¿›è¡ŒäºŒåˆ†æœç´¢
 void BinarySearchFunction()
 {
     std::vector<int> nums = { 1, 3, 5, 7, 8, 8, 9, 11 };
 
     {
-        // index = 4 (²éÕÒ >= 8 µÄµÚÒ»¸öÔªËØÏÂ±ê)
+        // index = 4 (æŸ¥æ‰¾ >= 8 çš„ç¬¬ä¸€ä¸ªå…ƒç´ ä¸‹æ ‡)
         int index = std::lower_bound(nums.begin(), nums.end(), 8) - nums.begin();
     }
 
     {
-        // index = 6 (²éÕÒ > 8 µÄµÚÒ»¸öÔªËØÏÂ±ê)
+        // index = 6 (æŸ¥æ‰¾ > 8 çš„ç¬¬ä¸€ä¸ªå…ƒç´ ä¸‹æ ‡)
         int index = std::upper_bound(nums.begin(), nums.end(), 8) - nums.begin();
     }
 }

@@ -1,22 +1,22 @@
 #pragma once
 
 /*
-°üº¬ N ¸öµãºÍ M Ìõ±ßµÄÍ¼(ÎŞÏòÍ¼¡¢ÓĞÏòÍ¼)µÄ¹¹½¨·½Ê½:
+åŒ…å« N ä¸ªç‚¹å’Œ M æ¡è¾¹çš„å›¾(æ— å‘å›¾ã€æœ‰å‘å›¾)çš„æ„å»ºæ–¹å¼:
 
-1.ÁÚ½Ó¾ØÕó N * N
+1.é‚»æ¥çŸ©é˜µ N * N
 vector<vector<int>> matrix(N, vector<int>(N, weight))
-matrix[i][j]: i µ½ j µÄÈ¨ÖØ
+matrix[i][j]: i åˆ° j çš„æƒé‡
 
-2.ÁÚ½Ó±í N * m (Ã¿¸öµãµÄ¶¯Ì¬±ßºÍÈ¨ÖØ)
+2.é‚»æ¥è¡¨ N * m (æ¯ä¸ªç‚¹çš„åŠ¨æ€è¾¹å’Œæƒé‡)
 vector<vector<pair<int, int>>> matrix(N, vector<pair<int, int>(to, weight)>>)
 
-3.Á´Ê½Ç°ÏòĞÇ
-vector<int> head(N, -1): N ¸öµãµÄÆğÊ¼±ß(-1±íÊ¾Ã»ÓĞ¶ÔÓ¦µÄ±ß)
-vector<vector<int>> nextEdge(next ÏÂÒ»Ìõ±ßµÄË÷Òı, to ËÑË÷µÄµã, weight µ½ËÑË÷µãµÄÈ¨ÖØ)
+3.é“¾å¼å‰å‘æ˜Ÿ
+vector<int> head(N, -1): N ä¸ªç‚¹çš„èµ·å§‹è¾¹(-1è¡¨ç¤ºæ²¡æœ‰å¯¹åº”çš„è¾¹)
+vector<vector<int>> nextEdge(next ä¸‹ä¸€æ¡è¾¹çš„ç´¢å¼•, to æœç´¢çš„ç‚¹, weight åˆ°æœç´¢ç‚¹çš„æƒé‡)
 
-head ºÍ next ¹¹³ÉÁËÒ»¸öÁ´±íµÄÖ¸Ïò¹ØÏµ
+head å’Œ next æ„æˆäº†ä¸€ä¸ªé“¾è¡¨çš„æŒ‡å‘å…³ç³»
 
-²âÊÔÊı¾İ:
+æµ‹è¯•æ•°æ®:
 vector<vector<int>> edges = { 
         { 0, 2, 6 }, 
         { 3, 2, 4 }, 
@@ -35,7 +35,7 @@ void BuildGraph(int n, std::vector<std::vector<int>>& edges)
     int m = edges.size();
 
     {
-        // ÁÚ½Ó¾ØÕó½¨Í¼
+        // é‚»æ¥çŸ©é˜µå»ºå›¾
         std::vector<std::vector<int>> matrix(n, std::vector<int>(n, INT_MIN));
 
         for (int i = 0; i < m; i++)
@@ -58,7 +58,7 @@ void BuildGraph(int n, std::vector<std::vector<int>>& edges)
     }
 
     {
-        // ÁÚ½Ó±í½¨Í¼
+        // é‚»æ¥è¡¨å»ºå›¾
         std::vector<std::vector<std::pair<int, int>>> graph(n);
 
         for (int i = 0; i < m; i++)
@@ -78,7 +78,7 @@ void BuildGraph(int n, std::vector<std::vector<int>>& edges)
     }
 
     {
-        // Á´Ê½Ç°ÏòĞÇ½¨Í¼
+        // é“¾å¼å‰å‘æ˜Ÿå»ºå›¾
         std::vector<int> head(n, -1);
         std::vector<std::vector<int>> nextEdge(m, std::vector<int>(3, -1));
 

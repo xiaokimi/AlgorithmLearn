@@ -5,8 +5,8 @@
 #include "RandomSample.h"
 
 /*
-  < target µÄ·Å×ó±ß == target µÄ·ÅÖĞ¼ä > target µÄ·ÅÓÒ±ß
-  [left, right] Îª == target µÄÏÂ±êË÷Òı
+  < target çš„æ”¾å·¦è¾¹ == target çš„æ”¾ä¸­é—´ > target çš„æ”¾å³è¾¹
+  [left, right] ä¸º == target çš„ä¸‹æ ‡ç´¢å¼•
 */
 void Partition(std::vector<int>& nums, int& left, int& right, int target)
 {
@@ -95,7 +95,7 @@ int FindMaxKNum(std::vector<int>& nums, int k, int left, int right)
     return num;
 }
 
-// ×î´óµÄµÚk¸öÊı
+// æœ€å¤§çš„ç¬¬kä¸ªæ•°
 int FindMaxKNum(std::vector<int>& nums, int k)
 {
     return FindMaxKNum(nums, k, 0, nums.size() - 1);
