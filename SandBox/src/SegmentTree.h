@@ -43,6 +43,10 @@ public:
     }
 
 protected:
+    /*
+    * left right 表示原数组的下标索引，index表示线段树数组对应的下标索引
+    * index 从1开始 子下标为 [index * 2, index * 2 + 1]
+    */
     void BuildTree(int left, int right, const std::vector<int>& nums, int index)
     {
         if (left == right)
